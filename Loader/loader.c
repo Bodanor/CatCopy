@@ -117,6 +117,7 @@ int write_content(FILECONTENT *file_content_struct, char *outputFileName)
     FILE *outputFile = fopen(outputFileName, "w+");
     if (outputFile == NULL)
     {
+        free(extension);
         return -1;
         
     }
@@ -129,7 +130,7 @@ int write_content(FILECONTENT *file_content_struct, char *outputFileName)
         fputs("\n", outputFile);
         
     }
-    
+    free(extension);
     fclose(outputFile);
     return 0;
 }
