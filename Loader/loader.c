@@ -68,7 +68,7 @@ int load_content(FILECONTENT *file_content_struct, char *inputFileName)
     char buf[1000];
     int i = 0;
     
-    while (fgets(buf, 100, file))
+    while (fgets(buf, 1000, file) != (char*) NULL)
     {
         if (i == arrlen)
         {
